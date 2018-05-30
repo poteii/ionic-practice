@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -20,6 +21,16 @@ export class HomePage {
       message: `Hello ${name}`,
       duration: 3000
     }).present();
+  }
+
+  navigateToSecondPage() {
+    this.navCtrl.push('SecondPage', {
+      message: "hello from the homepage!"
+    });
+  }
+
+  navigateToAboutPage() {
+    this.navCtrl.push('AboutPage');
   }
 
 }
